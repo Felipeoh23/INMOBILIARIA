@@ -4,7 +4,7 @@
 
 
 header {
-    background-color: rgb(78, 78, 78); 
+    background-color: rgb(2, 19, 36); 
     color: rgb(75, 74, 74); 
     text-align: center;
     display: flex;
@@ -154,7 +154,7 @@ body {
 
 
 footer {
-    background: rgb(78, 78, 78);
+    background: rgb(2, 19, 36);
     min-height: 100px;;
 }
 footer p{
