@@ -136,11 +136,11 @@ body {
 
 #contenedor-formulario{
     position:absolute;
-    top:30%;
-    left:50%;
+    top:27%;
+    left:45%;
     transform: translate(-50%, -50%);
     background: #fbfafa;
-    border-radius:5px;
+    border-radius:3px;
     
 }
 

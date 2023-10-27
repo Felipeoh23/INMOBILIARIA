@@ -15,6 +15,8 @@
   </head>
   <body>
   
+   <!-- HEADER -->
+
     <header class="container-fluid bg-mi-color d-flex justify-content-between align-items-center p-2">
       <div class="logo">
           <img src="/imagenes/logo.png" alt="Logo" class="logo-img">
@@ -22,6 +24,7 @@
       <p class="text-light mb-0 fs-6 mx-auto">LOS MEJORES INMUEBLES A TU ALCANCE</p>
   </header>
   
+   <!-- BOTONES VENTA - ALQUILER-->
 
     <nav  class="navbar navbar-expand-lg mi-color-personalizado navbar-light p-3"  id="menu">
         <div class="container">
@@ -38,22 +41,75 @@
                 <a class="nav-link" aria-current="page" href="#">INICIO</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#servicios-fila-2">VENTA</a>
+                <a class="nav-link" href="" id="btn-venta" id="img">VENTA</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#servicios-fila-1">ALQUILER</a>
+                <a class="nav-link" href="" id="btn-alquiler" id="img">ALQUILER</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="email" placeholder="NOTIFICACIONES" aria-label="Suscribete">
-              <button class="btn btn-mi-color btn btn-mi-estilo" type="button">Suscribete</button>
+          </div>
+
+          <!-- REGISTRO E INICIO DE SESION -->
+        
+            <div id="galeria"></div>
+            <div class="d-flex justify-content-end p-2">
+              <button id="btnRegistrarse" class="btn btn-primary mx-2" onclick="mostrarFormulario('formularioRegistrarse')">Registrarse</button>
+              <button id="btnIniciarSesion" class="btn btn-primary mx-2" onclick="mostrarFormulario('formularioIniciarSesion')">Iniciar sesión</button>
+          </div>
+        <div id="formularioRegistrarse" class="formulario" style="display: none;">
+            <h2>Registro</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" required>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="usuarioRegistro">Usuario:</label>
+                    <input type="text" class="form-control" id="usuarioRegistro" name="usuarioRegistro" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contrasenaRegistro">Contraseña:</label>
+                    <input type="password" class="form-control" id="contrasenaRegistro" name="contrasenaRegistro" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarse</button>
             </form>
+        </div>
+        
+        
+        <div id="formularioIniciarSesion" class="formulario" style="display: none;">
+            <h2>Iniciar Sesión</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="usuarioInicioSesion">Usuario:</label>
+                    <input type="text" class="form-control" id="usuarioInicioSesion" name="usuarioInicioSesion" required>
+                </div>
+                <div class="mb-3">
+                    <label for="contrasenaInicioSesion">Contraseña:</label>
+                    <input type="password" class="form-control" id="contrasenaInicioSesion" name="contrasenaInicioSesion" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar</button>
+                <button type="button" class="btn btn-secondary" onclick="cancelarInicioSesion()">Cancelar</button>
+            </form>
+        </div>
+        
           </div>
 
         </div>
       </nav>
 
-    
+    <!-- CARRUSEL DE IMAGENES -->
    
     <div id="carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -86,7 +142,7 @@
         
      
 
-
+      <!-- CATALOGO -->
 
     <section class="d-flex flex-column justify-content-center align-items-center pt-5  text-center w-50 m-auto" id="intro">
     <h1 class="p-3 fs-2 border-top border-3">Un Lugar Genial y De Altos Estandares<span class="mi-color-personalizado"><span/></h1>
@@ -148,6 +204,8 @@
 
 
 
+<!-- INFORMACION GENERAL -->
+
 <section>
     <div class="container w-50 m-auto text-center" id="equipo">
         <h1 class="mb-5 fs-2">Equipo pequeño con <span class="mi-color-personalizado">Resultados Grandes</span>.</h1>
@@ -188,7 +246,7 @@
 </section>
 
 
-
+<!-- FORMULARIO CITA -->
 
 <section id="seccion-contacto" class="border-bottom border-secondary border-2">
   <div id="bg-contactos">
@@ -201,7 +259,7 @@
   <div class="container  border-top border-primary " style="max-width: 500px" id="contenedor-formulario">
       <div class="text-center mb-4" id="titulo-formulario">
         <div><img src="imagenes/ASESORIA.jpeg" alt="" class="img-fluid ps-5"></div>
-        <h2>Agenda Una Asesoria</h2>
+        <h2>Agenda Una Cita</h2>
         <p class="fs-5">Estamos aqui para ayudarte a encontrar tu Hogar</p>
       </div>
 
@@ -210,30 +268,40 @@
       <form   method="POST" data-netlify="true" action="#">  
         
         <div class="mb-3">            
-          <input type="input" class="form-control" id="name" name="name" placeholder="Nombre Completo">
+          <input type="input" class="form-control" id="name" name="name" placeholder="Nombre">
+        </div>
+
+        <div class="mb-3">            
+          <input type="input" class="form-control" id="name" name="name" placeholder="Apellido">
+        </div>
+
+
+        <div class="mb-3">
+          <input type="tel" class="form-control" name="phone" id="phone" placeholder="Telefono">
         </div>
 
             <div class= "mb-3">           
               <input type="email" class="form-control" id="email" name="email" placeholder="Email">
             </div>
 
-            <div class="mb-3">
-              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Telefono">
-            </div>
-
+          
           <div class="mb-3">       
             <textarea class="form-control" name="message" id="message" rows="4"></textarea>
           </div>
 
           <div class="mb-3">
-            <button type="submit" class=" btn btn-mi-estilo w-100 fs-5">Enviar Mensaje</button>
+            <button type="submit" class=" btn btn-mi-estilo w-100 fs-5">Agendar Cita</button>
           </div>
+
+          <button type="button" class="btn btn-primary w-100 mb-3" id="abrir-calendar-btn">Abrir Calendario</button>
+        <div id="calendar-container" class="d-none">
+        </div>
       </form>
   
   </div>
 </section>
 
-
+  
 
 
 
